@@ -28,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
                         goToMainActivity()
                     } else {
                         // If sign in fails, display a message to the user.
+                        Log.d("Error", task.exception?.message.toString())
                         if (task.exception?.message.toString() == ERROR_USUARIO_NO_EXISTE){
                             crearUsuario(correo, contrasena)
                         }
@@ -61,6 +62,4 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-
-
 }
